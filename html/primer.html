@@ -1,0 +1,33 @@
+﻿	<html>
+
+<head>
+<script type="text/javascript" language="javascript">
+function over(e) {
+    var e = e || window.event;
+    var elem = e.srcElement || e.target;
+    var relatedTarget = e.relatedTarget || e.fromElement
+    relatedTarget.style.background="";
+    relatedTarget.style.color="";
+    relatedTarget.style.border="";
+
+
+    if (elem.tagName == 'BODY')
+        return;
+    elem.style.background="#FFFF00";
+    elem.style.color="#000";
+    elem.style.cursor="pointer";
+    elem.style.border="1px solid #FF0000";
+
+}
+</script>
+</head>
+<body onmouseover="over(event);">
+<div>
+    <img src="http://javascript.ru/forum/images/smilies/smile.gif" /><br />
+    <span>text text text text</span><br />
+    <div>other text other text other text</div>
+</div>
+<img src="http://javascript.ru/forum/images/smilies/tongue.gif" />
+<span>bla bla bla bla</span>
+</body>
+</html>
