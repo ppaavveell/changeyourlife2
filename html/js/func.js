@@ -120,7 +120,14 @@ cyl.summa = function (int1, what, int2)
 					sum = num2 * num1;
 					break;
 				case "/":
-					sum = num2 / num1;
+					if(num1 == 0)
+					{
+						sum = 'Деление на 0 невозможно';
+					}
+					else
+					{
+						sum = num2 / num1;
+					}
 					break;
 			}
 			//console.log('sum =', sum);
@@ -140,3 +147,16 @@ $(document).ready(function(e)
 // $('div.className') - обращение ко всем div-ам класса className
 // $('div.className').Конструкция котороая нужна(напр. show()) - действия с объектом
 // $(e.currentTarget).attr('id') - получение ID нажатого элемента
+
+//window.frames[]	Все фреймы - т.е. объекты, отвечающие контейнерам <FRAME>
+//document.all[]	Все объекты, отвечающие контейнерам внутри контейнера <BODY>
+//document.anchors[]	Все якоря - т.е. объекты, отвечающие контейнерам <A>
+//document.applets[]	Все апплеты - т.е. объекты, отвечающие контейнерам <APPLET>
+//document.embeds[]	Все вложения - т.е. объекты, отвечающие контейнерам <EMBED>
+//document.forms[]	Все формы - т.е. объекты, отвечающие контейнерам <FORM>
+//document.images[]	Все картинки - т.е. объекты, отвечающие контейнерам <IMG>
+//document.links[]	Все ссылки - т.е. объекты, отвечающие контейнерам <A HREF="..."> и <AREA HREF="...">
+//document.f.elements[]	Все элементы формы с именем f - т.е. объекты, отвечающие контейнерам <INPUT> и <SELECT>
+//document.f.s.options[]	Все опции (контейнеры <OPTION> ) в контейнере <SELECT NAME=s> в форме <FORM NAME=f>
+//navigator.mimeTypes[]	Все типы MIME, поддерживаемые браузером (список см. на сайте IANA)
+//function_name.arguments[]	Все аргументы, переданные функции function_name() при вызове
