@@ -26,12 +26,36 @@
 
 
 		<?php
-			// require_once "menu.php";
-			// $menuClass = new menuClass();
-			// echo $menuClass->title;
-			// $menuClass->menu();
+			function str_search($path, $extension, $str)
+			{
+			        $file_arr = array();
+			        foreach (glob(rtrim($path, '/')."/*.".$extension) as $filename)
+			        {
+			                if(strstr(file_get_contents($filename), $str) != false)
+			                $file_arr[] = $filename;
+			        }
+			        return $file_arr;
+			}
+
+			if($handle = opendir("H:\\") )
+			{
+				var_dump($handle);
+				echo "<br>Файлы:<br>";
+				//while (false !== ($file = scandir($handle)))
+				//{
+				$file = scandir($handle);
+					print_r($file);
+					//str_search('my_dir', 'файл.txt', 'строка поиска');
+				//}
+			}
+			//str_search('my_dir', 'файл.txt', 'строка поиска');
 		?>
 	</body>
 
 
 </html>
+
+<script type="text/javascript">
+$('button.buttons').css("background-color", "blue").css("font-size", "30px");
+	// alert($("*").size());
+</script>
